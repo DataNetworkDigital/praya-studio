@@ -8,14 +8,22 @@
 <meta name="description" content="Praya Studio — production experts collective based in Jogja. Branding, production, marketing, and social media. Devoted to craft and culture.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:wght@400;500;600;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600&family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<div class="grain" aria-hidden="true"></div>
+
+<!-- TOP UTILITY BAR -->
+<div class="topbar">
+  <span class="status"><span class="dot"></span>Available for projects</span>
+  <span class="topbar-mid">Production · Branding · Marketing · Social</span>
+  <span>Jogja, ID — ©2026</span>
+</div>
+
 <!-- NAV -->
 <header class="nav" id="nav">
-  <div class="nav-tab"></div>
   <div class="nav-inner">
     <a href="#hero" class="nav-logo" data-link>Praya<span>Studio</span></a>
     <nav class="nav-links" id="navLinks">
@@ -26,198 +34,198 @@
       <a href="#work" data-link>Work</a>
       <a href="#contact" data-link>Contact</a>
     </nav>
-    <a class="nav-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20project" target="_blank" rel="noopener">Start a project</a>
+    <a class="nav-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20project" target="_blank" rel="noopener">Start a project <span aria-hidden="true">&#8599;</span></a>
     <button class="nav-burger" id="navBurger" aria-label="Open menu"><span></span><span></span></button>
   </div>
 </header>
 
+<!-- STICKY SIDE LABEL (desktop) -->
+<div class="side-label" aria-hidden="true"><span id="sideLabel">Studio</span> — Praya © 2026</div>
+
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#hero" data-link data-close>Home</a>
-  <a href="#about" data-link data-close>About</a>
-  <a href="#services" data-link data-close>Services</a>
-  <a href="#work" data-link data-close>Work</a>
-  <a href="#contact" data-link data-close>Contact</a>
-  <a class="mobile-menu-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20project" target="_blank" rel="noopener" data-close>Start a project</a>
+  <a href="#hero" data-link data-close><span class="mm-no">01</span> Home</a>
+  <a href="#about" data-link data-close><span class="mm-no">02</span> About</a>
+  <a href="#services" data-link data-close><span class="mm-no">03</span> Services</a>
+  <a href="#work" data-link data-close><span class="mm-no">04</span> Work</a>
+  <a href="#contact" data-link data-close><span class="mm-no">05</span> Contact</a>
+  <a class="mobile-menu-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20project" target="_blank" rel="noopener" data-close>Start a project &#8599;</a>
 </div>
 
 <main>
 
 <!-- HERO -->
 <section class="hero section-dark" id="hero">
-  <div class="hero-bg" id="heroBg" aria-hidden="true"></div>
+  <div class="hero-glow" id="heroGlow" aria-hidden="true"></div>
+  <div class="hero-top">
+    <span class="eyebrow">Creative production collective</span>
+    <span class="eyebrow">(Est. Jogja)</span>
+  </div>
   <div class="hero-content">
-    <div class="hero-mark reveal-mask"><span>Praya</span></div>
-    <div class="hero-mark reveal-mask" data-d="1"><span>Studio</span></div>
-    <div class="hero-tagline reveal" data-d="2">
-      <span class="pill pill-dark">Devoted to</span>
-      <span class="pill pill-light">craft &amp; culture</span>
-    </div>
+    <h1 class="hero-mark">
+      <span class="reveal-mask"><span>Praya</span></span>
+      <span class="reveal-mask" data-d="1"><span>Studio</span></span>
+    </h1>
+    <p class="hero-tagline reveal" data-d="2">Devoted to <em>craft &amp; culture</em> — we bring project ambition to life through world-class production.</p>
   </div>
   <div class="hero-foot">
-    <span class="reveal" data-d="3">Production experts collective — Jogja</span>
-    <a href="#about" class="scroll-cue reveal" data-link data-d="3" aria-label="Scroll down">Scroll <span class="scroll-line"></span></a>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Branding</span><i>&#10033;</i><span>Production</span><i>&#10033;</i><span>Marketing</span><i>&#10033;</i><span>Social Media</span><i>&#10033;</i><span>Web</span><i>&#10033;</i><span>Branding</span><i>&#10033;</i><span>Production</span><i>&#10033;</i><span>Marketing</span><i>&#10033;</i><span>Social Media</span><i>&#10033;</i><span>Web</span><i>&#10033;</i>
+      </div>
+    </div>
+    <a href="#about" class="badge" data-link aria-label="Scroll down">
+      <svg viewBox="0 0 120 120"><defs><path id="bpath" d="M60,60 m-42,0 a42,42 0 1,1 84,0 a42,42 0 1,1 -84,0"/></defs><text><textPath href="#bpath">PRAYA STUDIO · EST. 2026 · SCROLL DOWN · </textPath></text></svg>
+      <span class="badge-arrow" aria-hidden="true">&#8595;</span>
+    </a>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="about section-dark" id="about">
-  <p class="eyebrow reveal">About Studio Praya</p>
-  <h2 class="display-xl reveal-mask"><span>Praya</span></h2>
-  <div class="about-cols">
-    <p class="reveal" data-d="1">A production experts collective based in Jogja, bringing project ambition to life through world-class production service.</p>
-    <p class="reveal" data-d="2">We believe in prioritizing creative craft and understanding its complexes — an ecosystem that allows magic moments to happen.</p>
+  <span class="ghost" aria-hidden="true">Studio</span>
+  <div class="section-aside">
+    <span class="index">01</span>
+    <span class="section-name">About</span>
+  </div>
+  <div class="about-body">
+    <p class="lead reveal">We are a <em>production experts collective</em> based in Jogja — obsessed with craft and culture, prioritizing creative work and the ecosystem that lets magic moments happen.</p>
+    <div class="about-cols">
+      <div class="reveal" data-d="1">
+        <div class="meta-row"><span>Discipline</span><span>Production &amp; Branding</span></div>
+        <div class="meta-row"><span>Based in</span><span>Yogyakarta, ID</span></div>
+        <div class="meta-row"><span>Since</span><span>2022</span></div>
+      </div>
+      <p class="reveal" data-d="2">We only work with the best in every discipline, providing clients the human and creative resources to bring complex productions to life — from first idea to final delivery.</p>
+    </div>
   </div>
 </section>
 
+<!-- MANIFESTO -->
 <section class="manifesto section-olive">
-  <p class="manifesto-text reveal">
-    <span class="mark-circle">Obsessed</span> with craft and culture — to deliver truly outstanding creative work. Never afraid to put ourselves in front of demanding, challenging projects. We only work with the best in every discipline, providing our clients the human and creative resources to bring complex productions to life.
-  </p>
+  <p class="manifesto-text reveal"><span class="mark-circle">Obsessed</span> with craft and culture. Never afraid to put ourselves in front of demanding, challenging projects — because <em>chemistry is at its peak</em> when a shared creative vision and grit guide the work.</p>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee section-olive" aria-hidden="true">
   <div class="marquee-track">
-    <span>Praya creative</span><span class="dot">•</span><span>Praya creative</span><span class="dot">•</span><span>Praya creative</span><span class="dot">•</span><span>Praya creative</span><span class="dot">•</span>
+    <span>Praya creative</span><i>&#10033;</i><span>Praya creative</span><i>&#10033;</i><span>Praya creative</span><i>&#10033;</i><span>Praya creative</span><i>&#10033;</i>
   </div>
 </div>
 
 <!-- SERVICES -->
 <section class="services section-dark" id="services">
-  <p class="eyebrow reveal">Our services</p>
-
-  <article class="service reveal">
-    <div class="service-head">
-      <span class="service-no">01</span>
-      <h3 class="display-lg reveal-mask"><span>Production</span></h3>
-    </div>
-    <div class="service-body">
-      <ul class="service-list stagger">
-        <li>Company Profile</li><li>Product Content</li><li>Photo &amp; Videography</li><li>Filming</li><li>Website</li>
-      </ul>
-      <a class="service-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20Production" target="_blank" rel="noopener">Diskusikan project <span>&#8599;</span></a>
-    </div>
-  </article>
-
-  <article class="service service-alt reveal">
-    <div class="service-head">
-      <span class="service-no">02</span>
-      <h3 class="display-lg reveal-mask"><span>Branding</span></h3>
-    </div>
-    <div class="service-body">
-      <ul class="service-list stagger">
-        <li>Brand Development</li><li>Brand Consulting</li><li>Graphic Design</li><li>Brand Marketing</li>
-      </ul>
-      <a class="service-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20Branding" target="_blank" rel="noopener">Diskusikan project <span>&#8599;</span></a>
-    </div>
-  </article>
-
-  <article class="service reveal">
-    <div class="service-head">
-      <span class="service-no">03</span>
-      <h3 class="display-lg reveal-mask"><span>Marketing</span></h3>
-    </div>
-    <div class="service-body">
-      <ul class="service-list stagger">
-        <li>Activation Program</li><li>Relation</li><li>Campaign</li><li>Program Marketing</li><li>Social Media Marketing</li>
-      </ul>
-      <a class="service-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20Marketing" target="_blank" rel="noopener">Diskusikan project <span>&#8599;</span></a>
-    </div>
-  </article>
-
-  <article class="service service-alt reveal">
-    <div class="service-head">
-      <span class="service-no">04</span>
-      <h3 class="display-lg reveal-mask"><span>Social Media</span></h3>
-    </div>
-    <div class="service-body">
-      <ul class="service-list stagger">
-        <li>Social Media Activation</li><li>Social Media Management</li><li>Content Production</li><li>Ads Segmentation</li><li>Content Plan</li>
-      </ul>
-      <a class="service-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20Social%20Media" target="_blank" rel="noopener">Diskusikan project <span>&#8599;</span></a>
-    </div>
-  </article>
+  <div class="section-aside services-aside">
+    <span class="index">02</span>
+    <span class="section-name">Services</span>
+    <span class="aside-note">What we do, end to end.</span>
+  </div>
+  <div class="services-list">
+    <article class="service reveal">
+      <div class="service-head"><span class="service-no">01</span><h3>Production</h3></div>
+      <ul class="service-list stagger"><li>Company Profile</li><li>Product Content</li><li>Photo &amp; Videography</li><li>Filming</li><li>Website</li></ul>
+      <a class="service-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20Production" target="_blank" rel="noopener">Diskusikan project <span aria-hidden="true">&#8599;</span></a>
+    </article>
+    <article class="service reveal">
+      <div class="service-head"><span class="service-no">02</span><h3>Branding</h3></div>
+      <ul class="service-list stagger"><li>Brand Development</li><li>Brand Consulting</li><li>Graphic Design</li><li>Brand Marketing</li></ul>
+      <a class="service-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20Branding" target="_blank" rel="noopener">Diskusikan project <span aria-hidden="true">&#8599;</span></a>
+    </article>
+    <article class="service reveal">
+      <div class="service-head"><span class="service-no">03</span><h3>Marketing</h3></div>
+      <ul class="service-list stagger"><li>Activation Program</li><li>Relation</li><li>Campaign</li><li>Program Marketing</li><li>Social Media Marketing</li></ul>
+      <a class="service-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20Marketing" target="_blank" rel="noopener">Diskusikan project <span aria-hidden="true">&#8599;</span></a>
+    </article>
+    <article class="service reveal">
+      <div class="service-head"><span class="service-no">04</span><h3>Social Media</h3></div>
+      <ul class="service-list stagger"><li>Social Media Activation</li><li>Social Media Management</li><li>Content Production</li><li>Ads Segmentation</li><li>Content Plan</li></ul>
+      <a class="service-cta" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20Social%20Media" target="_blank" rel="noopener">Diskusikan project <span aria-hidden="true">&#8599;</span></a>
+    </article>
+  </div>
 </section>
 
 <!-- WORK -->
 <section class="work section-dark" id="work">
-  <div class="work-top">
-    <p class="eyebrow reveal">Selected work</p>
-    <h2 class="display-lg reveal-mask"><span>Portfolio</span></h2>
+  <span class="ghost ghost-right" aria-hidden="true">Work</span>
+  <div class="section-head-row">
+    <div class="section-aside"><span class="index">03</span><span class="section-name">Selected work</span></div>
+    <p class="work-note reveal">A collective of production experts — here is a slice of what we have shipped.</p>
   </div>
   <div class="work-grid">
-    <a class="work-tile reveal" data-tone="olive" href="#contact" data-link>
-      <div class="work-media"><span class="work-word">Botanica</span><span class="work-tag">img</span></div>
-      <div class="work-meta"><span>Branding</span><h3>Botanica Coffee</h3></div>
+    <a class="work-tile reveal wide" data-tone="olive" href="#contact" data-link>
+      <div class="work-media"><span class="work-word">Botanica</span></div>
+      <div class="work-meta"><h3>Botanica Coffee</h3><span class="work-tags">Branding · Visual Identity · 2025</span></div>
     </a>
     <a class="work-tile reveal" data-tone="cream" data-d="1" href="#contact" data-link>
-      <div class="work-media"><span class="work-word">Douce</span><span class="work-tag">img</span></div>
-      <div class="work-meta"><span>Branding &amp; Production</span><h3>Douce Coffee</h3></div>
+      <div class="work-media"><span class="work-word">Douce</span></div>
+      <div class="work-meta"><h3>Douce Coffee</h3><span class="work-tags">Branding · Production · 2025</span></div>
     </a>
-    <a class="work-tile reveal" data-tone="dark" href="#contact" data-link>
-      <div class="work-media"><span class="work-word">Namdwa</span><span class="work-tag">img</span></div>
-      <div class="work-meta"><span>Social Media</span><h3>Namdwa Headquarters</h3></div>
+    <a class="work-tile reveal push" data-tone="dark" href="#contact" data-link>
+      <div class="work-media"><span class="work-word">Namdwa</span></div>
+      <div class="work-meta"><h3>Namdwa HQ</h3><span class="work-tags">Social Media · Content · 2025</span></div>
     </a>
     <a class="work-tile reveal" data-tone="cream" data-d="1" href="#contact" data-link>
-      <div class="work-media"><span class="work-word">Pleasant</span><span class="work-tag">img</span></div>
-      <div class="work-meta"><span>Production</span><h3>Pleasant Apparel</h3></div>
+      <div class="work-media"><span class="work-word">Pleasant</span></div>
+      <div class="work-meta"><h3>Pleasant Apparel</h3><span class="work-tags">Production · Lookbook · 2024</span></div>
     </a>
     <a class="work-tile reveal" data-tone="olive" href="#contact" data-link>
-      <div class="work-media"><span class="work-word">Danliris</span><span class="work-tag">img</span></div>
-      <div class="work-meta"><span>Corporate Production</span><h3>Danliris Group</h3></div>
+      <div class="work-media"><span class="work-word">Danliris</span></div>
+      <div class="work-meta"><h3>Danliris Group</h3><span class="work-tags">Corporate · Production · 2024</span></div>
     </a>
-    <a class="work-tile reveal" data-tone="dark" data-d="1" href="#contact" data-link>
-      <div class="work-media"><span class="work-word">18grams</span><span class="work-tag">img</span></div>
-      <div class="work-meta"><span>Production</span><h3>Eighteen Grams</h3></div>
+    <a class="work-tile reveal push" data-tone="dark" data-d="1" href="#contact" data-link>
+      <div class="work-media"><span class="work-word">18grams</span></div>
+      <div class="work-meta"><h3>Eighteen Grams</h3><span class="work-tags">Production · Content · 2024</span></div>
     </a>
   </div>
 </section>
 
-<!-- RESULTS -->
-<section class="results section-olive" id="results">
-  <p class="eyebrow reveal">The receipts</p>
-  <h2 class="results-head reveal-mask"><span>We move numbers</span></h2>
+<!-- RESULTS (inverted cream) -->
+<section class="results section-cream" id="results">
+  <div class="section-aside"><span class="index">04</span><span class="section-name">The receipts</span></div>
+  <h2 class="results-head reveal-mask"><span>We move</span></h2>
+  <h2 class="results-head reveal-mask" data-d="1"><span>numbers.</span></h2>
   <div class="stats stagger">
-    <div class="stat"><span class="stat-num" data-to="536" data-suffix="K+">0</span><span class="stat-label">Post views generated</span></div>
-    <div class="stat"><span class="stat-num" data-to="194" data-suffix="K+">0</span><span class="stat-label">Likes earned</span></div>
-    <div class="stat"><span class="stat-num" data-to="110" data-suffix="K+">0</span><span class="stat-label">Accounts reached</span></div>
-    <div class="stat"><span class="stat-num" data-to="4" data-suffix="+ yrs">0</span><span class="stat-label">Blooming with brands</span></div>
+    <div class="stat"><span class="stat-num" data-to="536" data-suffix="K">0</span><span class="stat-label">Post views generated</span></div>
+    <div class="stat"><span class="stat-num" data-to="194" data-suffix="K">0</span><span class="stat-label">Likes earned</span></div>
+    <div class="stat"><span class="stat-num" data-to="110" data-suffix="K">0</span><span class="stat-label">Accounts reached</span></div>
+    <div class="stat"><span class="stat-num" data-to="4" data-suffix="+">0</span><span class="stat-label">Years blooming with brands</span></div>
   </div>
   <div class="logos reveal">
+    <span class="logos-label">Trusted by</span>
     <span>Botanica</span><span>Eighteen Grams</span><span>Rocket's</span><span>Namdwa</span><span>Douce</span><span>Pleasant</span><span>Danliris</span>
   </div>
 </section>
 
 <!-- CONTACT / THANKS -->
 <section class="contact section-olive" id="contact">
+  <span class="ghost" aria-hidden="true">Thanks</span>
+  <div class="section-aside"><span class="index">05</span><span class="section-name">Let's talk</span></div>
+  <blockquote class="pull-quote reveal">&ldquo;Collaboration is like a door — open one door of opportunity, and another opens too.&rdquo;</blockquote>
   <div class="contact-grid">
-    <div class="contact-quote reveal">
-      <p>&ldquo;Collaboration is like a door — when we open one door of opportunity, another door of opportunity will open too.&rdquo;</p>
-      <p class="contact-sub">Hope we can work together and experience the best service from Praya Studio.</p>
-      <span class="signature">Praya Creative</span>
-    </div>
     <div class="thanks reveal-mask"><span>Big</span></div>
-    <div class="thanks reveal-mask" data-d="1"><span>Thanks</span></div>
+    <div class="thanks reveal-mask" data-d="1"><span>Thanks.</span></div>
   </div>
   <div class="contact-actions reveal">
-    <a class="btn btn-solid" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20project" target="_blank" rel="noopener">Chat on WhatsApp <span>&#8599;</span></a>
-    <a class="btn btn-ghost" href="https://www.instagram.com/prayacreative/" target="_blank" rel="noopener">@prayacreative <span>&#8599;</span></a>
+    <a class="btn btn-solid" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20project" target="_blank" rel="noopener">Chat on WhatsApp <span aria-hidden="true">&#8599;</span></a>
+    <a class="btn btn-ghost" href="https://www.instagram.com/prayacreative/" target="_blank" rel="noopener">@prayacreative <span aria-hidden="true">&#8599;</span></a>
   </div>
 </section>
 
 </main>
 
 <footer class="footer section-dark">
-  <div class="footer-mark">Praya<span>Studio</span></div>
+  <div class="footer-brand">
+    <div class="footer-mark">Praya<span>Studio</span></div>
+    <p class="footer-sign">Praya Creative</p>
+  </div>
   <div class="footer-meta">
-    <span>Production experts collective</span>
-    <span>Jogja, Indonesia</span>
-    <span>&copy; 2026 Praya Studio</span>
+    <div class="meta-row"><span>Production experts collective</span><span>Jogja, ID</span></div>
+    <div class="meta-row"><span>WhatsApp</span><span>+62 812-7888-8497</span></div>
+    <div class="meta-row"><span>Instagram</span><span>@prayacreative</span></div>
+    <div class="meta-row"><span></span><span>©2026 Praya Studio</span></div>
   </div>
 </footer>
 
-<!-- FLOATING WA -->
 <a class="wa-float" href="https://wa.me/6281278888497?text=Halo%20Praya%20Studio%2C%20saya%20mau%20diskusi%20project" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
   <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M16 3C9.4 3 4 8.3 4 14.9c0 2.3.7 4.5 1.9 6.4L4 29l7-1.8c1.8 1 3.8 1.5 5.9 1.5 6.6 0 12-5.3 12-11.9C28.9 8.3 22.6 3 16 3zm0 21.7c-1.9 0-3.7-.5-5.3-1.5l-.4-.2-3.9 1 1-3.8-.2-.4c-1.1-1.7-1.6-3.6-1.6-5.6 0-5.4 4.5-9.8 10-9.8s10 4.4 10 9.8-4.9 10.5-9.6 10.5zm5.5-7.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.2-.3.2-.6.1c-1.8-.9-2.9-1.6-4.1-3.6-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5s-.7-1.6-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6 2.9 1.1 2.9.8 3.4.7.5-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>
 </a>

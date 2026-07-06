@@ -36,14 +36,14 @@
   var countIO = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
       if (!en.isIntersecting) return;
-      var el = en.target, to = parseInt(el.dataset.to, 10), suf = el.dataset.suffix || '';
+      var el = en.target, to = parseInt(el.dataset.to, 10);
       countIO.unobserve(el);
-      if (reduce) { el.textContent = to + suf; return; }
+      if (reduce) { el.textContent = to; return; }
       var start = performance.now(), dur = 1400;
       function step(now) {
         var p = Math.min((now - start) / dur, 1);
         var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(eased * to) + suf;
+        el.textContent = Math.round(eased * to);
         if (p < 1) requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
@@ -55,7 +55,8 @@
   var nav = document.getElementById('nav');
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
   var indicator = document.getElementById('navIndicator');
-  var lightSections = ['about-light']; // reserved hook
+  var sideLabel = document.getElementById('sideLabel');
+  var SECTION_NAMES = { hero: 'Studio', about: 'About', services: 'Services', work: 'Work', results: 'Results', contact: 'Contact' };
 
   function moveIndicator(link) {
     if (!indicator || !link) return;
@@ -80,9 +81,9 @@
         var id = en.target.id;
         var mapped = ({ results: 'work', contact: 'contact' })[id] || id;
         setActive(mapped);
-        // toggle nav color on olive-background sections
-        var onLight = en.target.classList.contains('section-olive');
-        nav.classList.toggle('on-light', onLight);
+        nav.classList.toggle('on-light', en.target.classList.contains('section-olive'));
+        nav.classList.toggle('on-cream', en.target.classList.contains('section-cream'));
+        if (sideLabel && SECTION_NAMES[id]) sideLabel.textContent = SECTION_NAMES[id];
       }
     });
   }, { threshold: 0.5 });
