@@ -99,6 +99,8 @@ h1,h2,h3{font-family:var(--font-display);font-weight:900;color:var(--cream);line
 .nav-burger{display:flex;flex-direction:column;gap:6px;background:none;border:0;cursor:pointer;padding:6px;z-index:120;color:var(--cream)}
 .nav.on-light .nav-burger,.nav.on-cream .nav-burger{color:var(--black)}
 .nav-burger span{width:26px;height:2px;background:currentColor;transition:transform .35s var(--ease),opacity .35s var(--ease)}
+body.menu-open .nav{z-index:130}
+body.menu-open .nav-links{display:none}
 body.menu-open .nav-burger{color:var(--cream)}
 body.menu-open .nav-burger span:first-child{transform:translateY(4px) rotate(45deg)}
 body.menu-open .nav-burger span:last-child{transform:translateY(-4px) rotate(-45deg)}
