@@ -63,7 +63,7 @@ em{font-style:italic}
 
 /* ============ SECTION SHELLS ============ */
 section{position:relative;padding:clamp(64px,11vw,150px) var(--pad);border-top:1px solid var(--hair)}
-.section-dark{background:var(--black);color:var(--cream-80)}
+.section-dark{background:transparent;color:var(--cream-80)}
 .section-olive{background:var(--olive);color:var(--black);border-top-color:rgba(11,11,11,.18)}
 .section-cream{background:var(--cream);color:var(--black);border-top-color:rgba(11,11,11,.14)}
 .section-olive .eyebrow,.section-olive .index,.section-cream .eyebrow,.section-cream .index{color:var(--olive-deep)}
@@ -293,9 +293,43 @@ body.menu-open .mobile-menu a:nth-child(5){transition-delay:.36s}
   .work-tile:hover .work-media::after{opacity:1;transform:translateY(0)}
 }
 
+/* ============ LIVING BACKGROUND ============ */
+.bg-field{position:fixed;inset:0;z-index:-3;background:var(--black);overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(120px);mix-blend-mode:screen;will-change:transform}
+.blob.b1{width:65vw;height:65vw;background:radial-gradient(circle,rgba(90,101,82,.55),transparent 66%);top:-12%;left:-8%;animation:drift1 34s ease-in-out infinite alternate}
+.blob.b2{width:54vw;height:54vw;background:radial-gradient(circle,rgba(90,101,82,.42),transparent 70%);bottom:0;right:-10%;animation:drift2 44s ease-in-out infinite alternate}
+.blob.b3{width:46vw;height:46vw;background:radial-gradient(circle,rgba(128,116,72,.24),transparent 72%);top:42%;left:34%;animation:drift3 38s ease-in-out infinite alternate}
+@keyframes drift1{to{transform:translate(14vw,12vh) scale(1.15)}}
+@keyframes drift2{to{transform:translate(-16vw,-10vh) scale(1.12)}}
+@keyframes drift3{to{transform:translate(10vw,-14vh) scale(.88)}}
+.spotlight{position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(560px circle at var(--mx,60%) var(--my,24%),rgba(152,164,135,.15),transparent 58%)}
+.grain{inset:-6%}
+@media(min-width:900px){.grain{animation:grainshift 6s steps(5) infinite}}
+@keyframes grainshift{0%{transform:translate(0,0)}20%{transform:translate(-2%,1.5%)}40%{transform:translate(1.5%,-2%)}60%{transform:translate(-1.5%,-1.5%)}80%{transform:translate(2%,1.5%)}100%{transform:translate(0,0)}}
+
+/* scroll progress bar */
+.scroll-progress{position:fixed;top:0;left:0;right:0;height:3px;z-index:200;background:var(--olive-2);transform:scaleX(0);transform-origin:0 50%}
+@supports (animation-timeline:scroll()){.scroll-progress{animation:progressbar linear both;animation-timeline:scroll(root block)}}
+@keyframes progressbar{to{transform:scaleX(1)}}
+
+/* custom cursor + magnetic (desktop only) */
+.cursor{display:none}
+@media(hover:hover) and (pointer:fine){
+  .cursor{display:block;position:fixed;top:0;left:0;width:26px;height:26px;border-radius:50%;border:1px solid var(--olive-2);z-index:9999;pointer-events:none;transform:translate(calc(var(--cx,-100px) - 50%),calc(var(--cy,-100px) - 50%));transition:width .3s var(--ease),height .3s var(--ease),background .3s var(--ease),border-color .3s var(--ease),opacity .3s}
+  .cursor.big{width:82px;height:82px;background:var(--cream);border-color:transparent}
+  .cursor.big::after{content:"View";position:absolute;inset:0;display:grid;place-items:center;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--black)}
+  .magnetic{will-change:transform;transition:transform .35s var(--ease)}
+}
+@media(max-width:768px){
+  .blob.b3{display:none}
+  .blob.b1{animation-duration:48s}
+  .blob.b2{animation-duration:56s}
+}
+
 /* ============ REDUCED MOTION ============ */
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
   .reveal,.reveal-mask>span,.service-list li,.stat{opacity:1!important;transform:none!important}
-  .ticker-track,.marquee-track,.badge svg,.status .dot{animation:none!important}
+  .ticker-track,.marquee-track,.badge svg,.status .dot,.blob,.grain,.scroll-progress{animation:none!important}
+  .cursor{display:none!important}
 }

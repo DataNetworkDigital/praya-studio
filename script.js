@@ -127,4 +127,55 @@
     }
     if (lenis) lenis.on('scroll', parallax); else window.addEventListener('scroll', parallax, { passive: true });
   }
+
+  /* ---- Living background: spotlight follows pointer (desktop) / scroll (mobile) ---- */
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var root = document.documentElement;
+  if (!reduce) {
+    var sx = 60, sy = 24, tx = 60, ty = 24, spotOn = false;
+    function spotTick() {
+      sx += (tx - sx) * 0.1; sy += (ty - sy) * 0.1;
+      root.style.setProperty('--mx', sx.toFixed(1) + '%');
+      root.style.setProperty('--my', sy.toFixed(1) + '%');
+      if (Math.abs(tx - sx) > 0.1 || Math.abs(ty - sy) > 0.1) requestAnimationFrame(spotTick); else spotOn = false;
+    }
+    function spotWake() { if (!spotOn) { spotOn = true; requestAnimationFrame(spotTick); } }
+    if (fine) {
+      window.addEventListener('pointermove', function (e) {
+        tx = e.clientX / window.innerWidth * 100; ty = e.clientY / window.innerHeight * 100; spotWake();
+      }, { passive: true });
+    } else {
+      var spotScroll = function () {
+        var h = document.body.scrollHeight - window.innerHeight;
+        var y = lenis ? lenis.scroll : window.scrollY;
+        ty = 18 + (h > 0 ? y / h : 0) * 46; spotWake();
+      };
+      if (lenis) lenis.on('scroll', spotScroll); else window.addEventListener('scroll', spotScroll, { passive: true });
+    }
+  }
+
+  /* ---- Custom trailing cursor + magnetic buttons (desktop, non-reduced) ---- */
+  if (fine && !reduce) {
+    var cursor = document.getElementById('cursor');
+    var cx = -100, cy = -100, px = -100, py = -100;
+    window.addEventListener('pointermove', function (e) { cx = e.clientX; cy = e.clientY; }, { passive: true });
+    (function cursorTick() {
+      px += (cx - px) * 0.18; py += (cy - py) * 0.18;
+      if (cursor) { cursor.style.setProperty('--cx', px.toFixed(1) + 'px'); cursor.style.setProperty('--cy', py.toFixed(1) + 'px'); }
+      requestAnimationFrame(cursorTick);
+    })();
+    document.querySelectorAll('.work-tile').forEach(function (t) {
+      t.addEventListener('pointerenter', function () { if (cursor) cursor.classList.add('big'); });
+      t.addEventListener('pointerleave', function () { if (cursor) cursor.classList.remove('big'); });
+    });
+    document.querySelectorAll('.nav-cta, .btn, .service-cta').forEach(function (el) {
+      el.classList.add('magnetic');
+      el.addEventListener('pointermove', function (e) {
+        var b = el.getBoundingClientRect();
+        var dx = e.clientX - (b.left + b.width / 2), dy = e.clientY - (b.top + b.height / 2);
+        el.style.transform = 'translate(' + (dx * 0.25).toFixed(1) + 'px,' + (dy * 0.4).toFixed(1) + 'px)';
+      });
+      el.addEventListener('pointerleave', function () { el.style.transform = ''; });
+    });
+  }
 })();
